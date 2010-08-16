@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:OLAPDataGrid xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				 xmlns:s="library://ns.adobe.com/flex/spark" 
+				 xmlns:mx="library://ns.adobe.com/flex/mx"
+				 xmlns:sf="http://www.spicefactory.org/parsley"
+				 width="100%"
+				 height="100%"
+				 dataProvider="{ model.results }"
+>
+
+	<fx:Script>
+		<![CDATA[
+			import org.welsy.olapstats.application.MongoQueryEvent;
+			import org.welsy.olapstats.application.CubeHandler;
+			
+			[MessageDispatcher] public var dispatchMessage : Function;
+			
+			// the data model for the grid
+			[Inject] [Bindable] public var model : OlapGridModel;
+			
+			[Init] public function init() : void {
+				// set a reference to the OLAP cube
+				model.olapCube = olapCube;
+				
+				// query the server for data
+				dispatchMessage( MongoQueryEvent.getMongoSendQuery() );
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<fx:Declarations>
+		
+		<sf:Configure />
+		
+		<mx:OLAPCube id="olapCube" dataProvider="{ model.documents }" complete="model.queryCube( event )">
+			<mx:OLAPDimension name="CountryDim">
+				<mx:OLAPAttribute name="Country" dataField="country" />
+			</mx:OLAPDimension>
+			
+			<mx:OLAPDimension name="CategoryDim">
+				<mx:OLAPAttribute name="Category" dataField="category" />
+			</mx:OLAPDimension>
+			
+			<mx:OLAPDimension name="TargetDim">
+				<mx:OLAPAttribute name="Target" dataField="target" />
+			</mx:OLAPDimension>
+			
+			<mx:OLAPDimension name="ObjectIdDim">
+				<mx:OLAPAttribute name="ObjectId" dataField="_id" />
+			</mx:OLAPDimension>
+			
+			<mx:OLAPMeasure name="Value" dataField="value" />
+		</mx:OLAPCube>
+		
+	</fx:Declarations>
+
+</mx:OLAPDataGrid>

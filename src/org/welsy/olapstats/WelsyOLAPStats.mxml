@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:presentation="org.welsy.olapstats.presentation.*"
+			   xmlns:parsley="http://www.spicefactory.org/parsley"
+			   >
+	
+	<fx:Script>
+		<![CDATA[
+
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+		<parsley:ContextBuilder config="{ WelsyOLAPStatsConfig }" />
+		
+	</fx:Declarations>
+	
+	<!-- the data grid -->
+	<presentation:OlapGridView />
+	
+</s:Application>

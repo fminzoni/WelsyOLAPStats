@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600"
+			   creationComplete="testing()">
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.utils.object_proxy;
+			
+			import org.db.mongo.Collection;
+			import org.db.mongo.Cursor;
+			import org.db.mongo.Mongo;
+			import org.db.mongo.mwp.OpQuery;
+			import org.serialization.bson.Int64;
+			import org.serialization.bson.Utils;
+			
+			private static var curr : Cursor;
+			
+			private static function testing() : void {
+				
+				try {
+					var mongo : Mongo = new Mongo( "argon.homelinux.net" );
+					var query : OpQuery = new OpQuery( 77, 0, "local.dbg", 0, 0, {} );
+					
+					curr = mongo.getDB( "local" ).getCollection( "dbg" ).find( query );
+					
+				} catch( error : Event ) {
+					trace( "ERROR: " + error.toString() );
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+</s:Application>
