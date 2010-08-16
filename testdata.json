@@ -1,0 +1,27 @@
+{ "_id" : { "$oid" : "4c6786f15ea7f600274da858" }, "country" : "Switzerland", "category" : "Services", "target" : "Enterprise", "value" : 953 }
+{ "_id" : { "$oid" : "4c67870b5ea7f600274da859" }, "country" : "Switzerland", "category" : "Software", "target" : "Enterprise", "value" : 270 }
+{ "_id" : { "$oid" : "4c6787115ea7f600274da85a" }, "country" : "Switzerland", "category" : "Hardware", "target" : "Enterprise", "value" : 26 }
+{ "_id" : { "$oid" : "4c6787235ea7f600274da85b" }, "country" : "Switzerland", "category" : "Services", "target" : "Government", "value" : 774 }
+{ "_id" : { "$oid" : "4c67872c5ea7f600274da85c" }, "country" : "Switzerland", "category" : "Software", "target" : "Government", "value" : 14 }
+{ "_id" : { "$oid" : "4c6787335ea7f600274da85d" }, "country" : "Switzerland", "category" : "Hardware", "target" : "Government", "value" : 972 }
+{ "_id" : { "$oid" : "4c6787415ea7f600274da85e" }, "country" : "Switzerland", "category" : "Hardware", "target" : "Home", "value" : 327 }
+{ "_id" : { "$oid" : "4c6787465ea7f600274da85f" }, "country" : "Switzerland", "category" : "Software", "target" : "Home", "value" : 951 }
+{ "_id" : { "$oid" : "4c67874c5ea7f600274da860" }, "country" : "Switzerland", "category" : "Services", "target" : "Home", "value" : 171 }
+{ "_id" : { "$oid" : "4c6787735ea7f600274da861" }, "country" : "United States", "category" : "Services", "target" : "Enterprise", "value" : 996 }
+{ "_id" : { "$oid" : "4c67877a5ea7f600274da862" }, "country" : "United States", "category" : "Software", "target" : "Enterprise", "value" : 755 }
+{ "_id" : { "$oid" : "4c6787805ea7f600274da863" }, "country" : "United States", "category" : "Hardware", "target" : "Enterprise", "value" : 281 }
+{ "_id" : { "$oid" : "4c67878a5ea7f600274da864" }, "country" : "United States", "category" : "Hardware", "target" : "Government", "value" : 983 }
+{ "_id" : { "$oid" : "4c6787915ea7f600274da865" }, "country" : "United States", "category" : "Software", "target" : "Government", "value" : 756 }
+{ "_id" : { "$oid" : "4c6787985ea7f600274da866" }, "country" : "United States", "category" : "Services", "target" : "Government", "value" : 28 }
+{ "_id" : { "$oid" : "4c67879f5ea7f600274da867" }, "country" : "United States", "category" : "Services", "target" : "Home", "value" : 964 }
+{ "_id" : { "$oid" : "4c6787a75ea7f600274da868" }, "country" : "United States", "category" : "Software", "target" : "Home", "value" : 730 }
+{ "_id" : { "$oid" : "4c6787ae5ea7f600274da869" }, "country" : "United States", "category" : "Hardware", "target" : "Home", "value" : 977 }
+{ "_id" : { "$oid" : "4c6787c05ea7f600274da86a" }, "country" : "Japan", "category" : "Hardware", "target" : "Home", "value" : 455 }
+{ "_id" : { "$oid" : "4c6787ca5ea7f600274da86b" }, "country" : "Japan", "category" : "Hardware", "target" : "Government", "value" : 473 }
+{ "_id" : { "$oid" : "4c6787cf5ea7f600274da86c" }, "country" : "Japan", "category" : "Hardware", "target" : "Enterprise", "value" : 716 }
+{ "_id" : { "$oid" : "4c6787da5ea7f600274da86d" }, "country" : "Japan", "category" : "Software", "target" : "Enterprise", "value" : 82 }
+{ "_id" : { "$oid" : "4c6787e65ea7f600274da86f" }, "country" : "Japan", "category" : "Software", "target" : "Home", "value" : 565 }
+{ "_id" : { "$oid" : "4c6787f25ea7f600274da870" }, "country" : "Japan", "category" : "Services", "target" : "Home", "value" : 351 }
+{ "_id" : { "$oid" : "4c6787f95ea7f600274da871" }, "country" : "Japan", "category" : "Services", "target" : "Government", "value" : 860 }
+{ "_id" : { "$oid" : "4c6787ff5ea7f600274da872" }, "country" : "Japan", "category" : "Services", "target" : "Enterprise", "value" : 510 }
+{ "_id" : { "$oid" : "4c6788e15ea7f600274da873" }, "country" : "Japan", "category" : "Software", "target" : "Government", "value" : 70 }
