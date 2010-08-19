@@ -29,13 +29,13 @@ package org.welsy.olapstats.application
 		 */
 		[MessageHandler] public function cubeQueryHandler( event : CubeQueryEvent ) : void {
 			switch( event.type ) {
-				case "cubeQuerySuccess":
+				case CubeQueryEvent.CUBE_QUERY_SUCCESS:
 
 					// update the results in the view
 					model.results = event.result as IOLAPResult;
 					break;
 				
-				case "cubeQueryFault":
+				case CubeQueryEvent.CUBE_QUERY_FAULT:
 					
 					// report the failure
 					Alert.show( "OLAP query failed", "Error" );

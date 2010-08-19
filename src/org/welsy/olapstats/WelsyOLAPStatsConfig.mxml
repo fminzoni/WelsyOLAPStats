@@ -5,14 +5,19 @@
 		 xmlns:application="org.welsy.olapstats.application.*"
 		 xmlns:infrastructure="org.welsy.olapstats.infrastructure.*"
 		 xmlns:olapstats="org.welsy.olapstats.*"
+		 xmlns:domain="org.welsy.olapstats.domain.*"
 		 >
 	
 	<fx:Declarations>
 		
 		<olapstats:MongoConfig />
+		<olapstats:WelsyOLAPStats />
 		
 		<application:CubeHandler />
+		<application:InitHandler />
 		<application:MongoHandler />
+		
+		<domain:AppInit />
 		
 		<infrastructure:CubeQuery />
 		<infrastructure:MongoQuery />

@@ -21,9 +21,6 @@
 			[Init] public function init() : void {
 				// set a reference to the OLAP cube
 				model.olapCube = olapCube;
-				
-				// query the server for data
-				dispatchMessage( MongoQueryEvent.getMongoSendQuery() );
 			}
 			
 		]]>
@@ -34,24 +31,26 @@
 		
 		<sf:Configure />
 		
-		<mx:OLAPCube id="olapCube" dataProvider="{ model.documents }" complete="model.queryCube( event )">
+		<mx:OLAPCube id="olapCube" dataProvider="{ model.documents }" complete="model.queryCube( event )" >
+		
 			<mx:OLAPDimension name="CountryDim">
 				<mx:OLAPAttribute name="Country" dataField="country" />
+				<mx:OLAPHierarchy name="CountryHier" hasAll="true">
+					<mx:OLAPLevel attributeName="Country" />
+				</mx:OLAPHierarchy>
 			</mx:OLAPDimension>
 			
 			<mx:OLAPDimension name="CategoryDim">
 				<mx:OLAPAttribute name="Category" dataField="category" />
-			</mx:OLAPDimension>
-			
-			<mx:OLAPDimension name="TargetDim">
 				<mx:OLAPAttribute name="Target" dataField="target" />
-			</mx:OLAPDimension>
-			
-			<mx:OLAPDimension name="ObjectIdDim">
-				<mx:OLAPAttribute name="ObjectId" dataField="_id" />
+				<mx:OLAPHierarchy name="CategoryHier" hasAll="true">
+					<mx:OLAPLevel attributeName="Category" />
+					<mx:OLAPLevel attributeName="Target" />
+				</mx:OLAPHierarchy>
 			</mx:OLAPDimension>
 			
 			<mx:OLAPMeasure name="Value" dataField="value" />
+		
 		</mx:OLAPCube>
 		
 	</fx:Declarations>

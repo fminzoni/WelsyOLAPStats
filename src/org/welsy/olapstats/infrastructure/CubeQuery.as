@@ -27,11 +27,10 @@ package org.welsy.olapstats.infrastructure
 			var categorySet : OLAPSet = new OLAPSet();
 			categorySet.addElements( cube.findDimension( "CategoryDim" ).findAttribute( "Category" ).children );
 			var targetSet : OLAPSet = new OLAPSet();
-			targetSet.addElements( cube.findDimension( "TargetDim" ).findAttribute( "Target" ).children );
+			targetSet.addElements( cube.findDimension( "CategoryDim" ).findAttribute( "Target" ).children );
 			
 			query.getAxis( OLAPQuery.ROW_AXIS ).addSet( countrySet );
-			query.getAxis( OLAPQuery.COLUMN_AXIS ).addSet( categorySet );
-			query.getAxis( OLAPQuery.COLUMN_AXIS ).addSet( targetSet );
+			query.getAxis( OLAPQuery.COLUMN_AXIS ).addSet( categorySet.crossJoin( targetSet ) ); // union is other option
 			
 			// execute the query and assign event handlers
 			var token : AsyncToken = cube.execute( query );
@@ -42,7 +41,7 @@ package org.welsy.olapstats.infrastructure
 			dispatchMessage( CubeQueryEvent.getCubeQuerySuccess( result ) );
 		}
 		
-		public function cubeQueryFault( result : FaultEvent, token : Object ) : void {
+		public function cubeQueryFault( result : Object, token : Object ) : void {
 			dispatchMessage( CubeQueryEvent.getCubeQueryFault( result ) );
 		}
 	}
