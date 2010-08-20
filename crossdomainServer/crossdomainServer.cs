@@ -13,6 +13,7 @@ namespace CrossdomainServer
 		{
 			
 			TcpListener server = new TcpListener(Dns.GetHostEntry("argon.homelinux.net").AddressList[0], 843);
+			//TcpListener server = new TcpListener(843);
 			server.Start();
 			Console.WriteLine("server started");
 			
@@ -30,12 +31,9 @@ namespace CrossdomainServer
 					string output = "<?xml version=\"1.0\"?><cross-domain-policy>" + 
 					"<site-control permitted-cross-domain-policies=\"all\"/>" +
 					"<allow-access-from domain=\"*\" to-ports=\"*\" />" + 
-					"</cross-domain-policy>";
+					"</cross-domain-policy>\0";
 					Byte[] outputBytes = Encoding.ASCII.GetBytes(output);
 					stream.Write(outputBytes, 0, outputBytes.Length);
-					byte[] terminator = new byte[1];
-					terminator[0] = 0;
-					stream.Write(terminator, 0, 1);
 					stream.Flush();
 					Console.WriteLine("server responded");
 					client.Close();

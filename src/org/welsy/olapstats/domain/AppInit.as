@@ -33,6 +33,7 @@ package org.welsy.olapstats.domain
 		 */
 		public function obtainCrossdomain() : void {
 			Security.loadPolicyFile( mongoConfig.crossdomainPolicyURL );
+			Security.loadPolicyFile( mongoConfig.crossdomainPolicyOLD );
 		}
 		
 	}

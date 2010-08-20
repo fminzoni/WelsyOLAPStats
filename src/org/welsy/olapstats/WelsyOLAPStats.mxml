@@ -8,13 +8,24 @@
 	
 	<fx:Script>
 		<![CDATA[
-
+			import mx.events.FlexEvent;
+			
+			import org.welsy.olapstats.application.InitEvent;
+			
+			[MessageDispatcher] public var dispatchMessage : Function;
+			
+			// init the app environment
+			[Init] public function init( ) : void {
+				dispatchMessage( InitEvent.getAppReady() );
+			}
+			
 		]]>
 	</fx:Script>
 	
 	<fx:Declarations>
 		
 		<parsley:ContextBuilder config="{ WelsyOLAPStatsConfig }" />
+		<parsley:Configure />
 		
 	</fx:Declarations>
 	
