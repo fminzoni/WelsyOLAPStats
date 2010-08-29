@@ -23,6 +23,7 @@
 		<infrastructure:MongoQuery />
 		
 		<presentation:OlapGridModel />
+		<presentation:MenuBarModel />
 		
 	</fx:Declarations>
 	
