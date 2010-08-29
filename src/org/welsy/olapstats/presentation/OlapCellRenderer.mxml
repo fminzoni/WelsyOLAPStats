@@ -5,6 +5,21 @@
 		  xmlns:sf="http://www.spicefactory.org/parsley"
 		  implements="mx.controls.listClasses.IDropInListItemRenderer">
 
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace sf "http://www.spicefactory.org/parsley";
+		
+		.textField {
+			padding-left: 3px;
+		}
+		
+		.error {
+			background-color: red;
+		}
+		
+	</fx:Style>
+	
 	<fx:Script>
 		<![CDATA[
 			import mx.controls.advancedDataGridClasses.AdvancedDataGridListData;
@@ -14,8 +29,11 @@
 			private var _listData : AdvancedDataGridListData;
 			
 			public function set listData( value : BaseListData ) : void {
-				val.text = value.label;
-				var v : Number = parseFloat( value.label );
+				display.text = value.label;
+				var no : Number = parseFloat( value.label );
+				if( no > 500 ) {
+					styleName = "error";
+				}
 				_listData = value as AdvancedDataGridListData;			
 			}
 		
@@ -26,6 +44,6 @@
 		]]>
 	</fx:Script>
 	
-	<s:Label id="val" color="{0xff0000}" />
+	<mx:Text id="display" width="100%" height="100%" styleName="textField" />
 
 </mx:Canvas>

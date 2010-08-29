@@ -19,6 +19,7 @@
   </compiler>
   <applications>
     <application path="org/welsy/olapstats/WelsyOLAPStats.mxml"/>
+    <application path="test.mxml"/>
   </applications>
   <modules/>
   <buildCSSFiles/>

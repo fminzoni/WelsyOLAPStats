@@ -10,8 +10,7 @@ package org.welsy.olapstats.application
 		 * @brief Create a new InitEvent
 		 * @param type APP_READY
 		 */
-		public function InitEvent( type : String )
-		{
+		public function InitEvent( type : String ) {
 			super( type );
 		}
 		

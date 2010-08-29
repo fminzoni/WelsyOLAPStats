@@ -3,6 +3,7 @@ package org.welsy.olapstats.presentation
 	
 	import mx.collections.ArrayCollection;
 	import mx.events.CubeEvent;
+	import mx.olap.IOLAPAxisPosition;
 	import mx.olap.IOLAPResult;
 	import mx.olap.OLAPCube;
 	
