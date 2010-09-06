@@ -39,22 +39,15 @@
 		<mx:OLAPCube id="olapCube" dataProvider="{ model.documents }" complete="model.queryCube( event )" >
 		
 			<mx:OLAPDimension name="CountryDim">
-				<mx:OLAPAttribute name="Country" dataField="country" />
-				<mx:OLAPHierarchy name="CountryHier" hasAll="true">
-					<mx:OLAPLevel attributeName="Country" />
-				</mx:OLAPHierarchy>
+				<mx:OLAPAttribute name="Country" dataField="Country" />
 			</mx:OLAPDimension>
 			
 			<mx:OLAPDimension name="CategoryDim">
-				<mx:OLAPAttribute name="Category" dataField="category" />
-				<mx:OLAPAttribute name="Target" dataField="target" />
-				<mx:OLAPHierarchy name="CategoryHier" hasAll="true">
-					<mx:OLAPLevel attributeName="Category" />
-					<mx:OLAPLevel attributeName="Target" />
-				</mx:OLAPHierarchy>
+				<mx:OLAPAttribute name="Category" dataField="Category" />
+				<mx:OLAPAttribute name="Color" dataField="Color" />
 			</mx:OLAPDimension>
 			
-			<mx:OLAPMeasure name="Value" dataField="value" />
+			<mx:OLAPMeasure name="Quantity" dataField="Quantity" />
 		
 		</mx:OLAPCube>
 		

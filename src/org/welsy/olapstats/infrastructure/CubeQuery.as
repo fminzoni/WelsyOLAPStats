@@ -27,7 +27,7 @@ package org.welsy.olapstats.infrastructure
 			var categorySet : OLAPSet = new OLAPSet();
 			categorySet.addElements( cube.findDimension( "CategoryDim" ).findAttribute( "Category" ).children );
 			var targetSet : OLAPSet = new OLAPSet();
-			targetSet.addElements( cube.findDimension( "CategoryDim" ).findAttribute( "Target" ).children );
+			targetSet.addElements( cube.findDimension( "CategoryDim" ).findAttribute( "Color" ).children );
 			
 			query.getAxis( OLAPQuery.ROW_AXIS ).addSet( countrySet );
 			query.getAxis( OLAPQuery.COLUMN_AXIS ).addSet( categorySet.crossJoin( targetSet ) ); // union is other option

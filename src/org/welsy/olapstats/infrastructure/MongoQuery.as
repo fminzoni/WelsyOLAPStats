@@ -4,6 +4,7 @@ package org.welsy.olapstats.infrastructure
 	
 	import org.db.mongo.Cursor;
 	import org.db.mongo.Mongo;
+	import org.db.mongo.mwp.OpReply;
 	import org.welsy.olapstats.MongoConfig;
 	import org.welsy.olapstats.application.MongoQueryEvent;
 
@@ -26,7 +27,11 @@ package org.welsy.olapstats.infrastructure
 		
 		// called when all results from the database are loaded
 		public function readAll() : void {
-			dispatchMessage( MongoQueryEvent.getMongoReplyReceived( new ArrayCollection( cursor.documents ) ) );
+			var documents : ArrayCollection = new ArrayCollection();
+			for each( var reply : OpReply in cursor.replies ) {
+				documents.addAll( new ArrayCollection( reply.documents ) );
+			}
+			dispatchMessage( MongoQueryEvent.getMongoReplyReceived( documents ) );
 		}
 	}
 }
